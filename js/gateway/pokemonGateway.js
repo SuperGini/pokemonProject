@@ -9,9 +9,7 @@ class PokemonGateway {
         try{
 
             const pokemonResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/1`);
-            const pokemonBody = await pokemonResponse.json();
-
-            return pokemonBody;
+            return await pokemonResponse.json();
 
         }catch (e) {
 

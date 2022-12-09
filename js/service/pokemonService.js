@@ -8,6 +8,8 @@ class PokemonService {
 
         const pokemonBody = await gateway.getPokemon();
 
+        console.log(pokemonBody);
+
         return pokemonMapper.pokemon(pokemonBody);
 
     }
