@@ -4,11 +4,11 @@ const pokemonMapper = new Mapper();
 
 class PokemonGateway {
 
-    async getPokemon(){
+    async getPokemon(randomNumber){
 
         try{
 
-            const pokemonResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/1`);
+            const pokemonResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomNumber}`);
             return await pokemonResponse.json();
 
         }catch (e) {

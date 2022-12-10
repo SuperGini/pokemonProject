@@ -19,14 +19,17 @@ const img = document.querySelector('.image img');
 
 async function getPokemon(){
 
-    let x = await pokemonService.getPokemon();
-    console.log(x);
+    let randomNumber = Math.floor(1 + Math.random()*100);
+
+    console.log(randomNumber);
+
+
+
+    let x = await pokemonService.getPokemon(randomNumber);
 
     topStats.innerHTML = '';
     topStats.insertAdjacentHTML('afterbegin', renderPokemon.renderTopStats(x));
 
- //   pokemonImg.innerHTML='';
-  //  pokemonImg.insertAdjacentHTML('afterbegin', renderPokemon.renderImage(x));
 
     img.src = x.pokemonImg;
 
@@ -37,6 +40,7 @@ async function getPokemon(){
     bottomStats.insertAdjacentHTML('afterbegin', renderPokemon.renderBottomStats(x));
 
 }
+getPokemon();
 
 
 pokemonBtn.addEventListener('click', getPokemon);
@@ -44,7 +48,7 @@ pokemonBtn.addEventListener('click', getPokemon);
 container.addEventListener('mousemove', e => {
 
     let xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-    let yAxis = (window.innerHeight / 2 + e.pageY*1.2) / 25;
+    let yAxis = (window.innerHeight / 2 + e.pageY) / 25;
     card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
 
 })
@@ -52,8 +56,6 @@ container.addEventListener('mousemove', e => {
 container.addEventListener('mouseenter', e => {
     card.style.transition = 'none';
 
-
-    //top stats
     topStats.style.transform = 'translateZ(100px)';
 
     img.style.transform = 'translateZ(100px)';
@@ -66,11 +68,10 @@ container.addEventListener('mouseenter', e => {
 
 container.addEventListener('mouseleave', e => {
 
-    //card
     card.style.transition = 'all 0.5s ease';
     card.style.transform = `rotateY(0deg) rotateX(0deg)`;
 
-    //totp stats reset
+
     topStats.style.transform = 'translateZ(0px)';
 
     img.style.transform = 'translateZ(0px)';
