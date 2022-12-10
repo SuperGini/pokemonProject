@@ -4,7 +4,9 @@ const gateway = new PokemonGateway();
 
 class PokemonService {
 
-    async getPokemon(randomNumber){
+    async getPokemon(){
+
+        let randomNumber = Math.floor(1 + Math.random()*100);
 
         const pokemonBody = await gateway.getPokemon(randomNumber);
 

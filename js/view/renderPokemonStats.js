@@ -10,11 +10,6 @@ class RenderPokemonStats {
         `;
     }
 
-    renderImage(pokemon){
-        return `
-        <img class="img" src="${pokemon.pokemonImg}" style="transform: translateZ(100px)" alt="">
-        `;
-    }
 
     renderAbility(pokemon){
         return `
