@@ -12,8 +12,19 @@ class PokemonGateway {
             return await pokemonResponse.json();
 
         }catch (e) {
-
             throw Error(e);
+        }
+    }
+
+    async getPokemonAbility(url){
+
+        try {
+
+            const pokemonAbility = await fetch(url);
+            return await pokemonAbility.json();
+
+        }catch (e) {
+            throw Error("Cant fetch the ability " + e)
         }
     }
 }

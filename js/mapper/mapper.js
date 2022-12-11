@@ -1,7 +1,7 @@
 'use strict'
 class Mapper {
 
-    pokemon(pokemonBody){
+    pokemon(pokemonBody, abilityDescription){
 
         const pokemonStats = new Stats();
 
@@ -32,7 +32,8 @@ class Mapper {
             pokemonName,
             pokemonStats,
             pokemonType,
-            pokemonPicture);
+            pokemonPicture,
+            abilityDescription);
     }
 
 

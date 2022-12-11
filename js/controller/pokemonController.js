@@ -19,29 +19,25 @@ class PokemonController {
 
         let pokemon = await pokemonService.getPokemon();
 
-        topStats.innerHTML = '';
-        topStats.insertAdjacentHTML('afterbegin', renderPokemon.renderTopStats(pokemon));
-
-
         img.src = pokemon.pokemonImg;
 
-        ability.innerHTML='';
-        ability.insertAdjacentHTML('afterbegin', renderPokemon.renderAbility(pokemon));
+        img.onload = function (){
+            topStats.innerHTML = '';
+            topStats.insertAdjacentHTML('afterbegin', renderPokemon.renderTopStats(pokemon));
 
-        bottomStats.innerHTML='';
-        bottomStats.insertAdjacentHTML('afterbegin', renderPokemon.renderBottomStats(pokemon));
+            ability.innerHTML='';
+            ability.insertAdjacentHTML('afterbegin', renderPokemon.renderAbility(pokemon));
 
+            bottomStats.innerHTML='';
+            bottomStats.insertAdjacentHTML('afterbegin', renderPokemon.renderBottomStats(pokemon));
+        }
     }
 
     generate3DEffect(){
         card.style.transition = 'none';
-
         topStats.style.transform = 'translateZ(100px)';
-
         img.style.transform = 'translateZ(100px)';
-
         ability.style.transform = 'translateZ(100px)';
-
         bottomStats.style.transform = 'translateZ(75px)';
     }
 

@@ -17,7 +17,7 @@ class RenderPokemonStats {
                 <label class="ability-label">ABILITY:</label>
                 <p class="ability-name">${pokemon.ability}</p>
             </div>
-<!--            <p class="ability-description">bla bla bla bla</p>-->
+            <p class="ability-description">${pokemon.abilityDescription}</p>
         `;
     }
 

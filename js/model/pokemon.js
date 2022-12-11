@@ -2,14 +2,23 @@
 class Pokemon {
 
 
-    constructor(ability, name, stats, type, pokemonImg) {
+    constructor(ability, name, stats, type, pokemonImg, abilityDescription) {
         this._ability = ability;
         this._name = name;
         this._stats = stats;
         this._type = type;
         this._pokemonImg = pokemonImg;
+        this._abilityDescription = abilityDescription;
     }
 
+
+    get abilityDescription() {
+        return this._abilityDescription;
+    }
+
+    set abilityDescription(value) {
+        this._abilityDescription = value;
+    }
 
     get ability() {
         return this._ability;
