@@ -12,7 +12,7 @@ class PokemonGateway {
             return await pokemonResponse.json();
 
         }catch (e) {
-            throw Error(e);
+            throw Error(e.message);
         }
     }
 
@@ -24,7 +24,7 @@ class PokemonGateway {
             return await pokemonAbility.json();
 
         }catch (e) {
-            throw Error("Cant fetch the ability " + e)
+            throw Error("Cant fetch the ability " + e.message)
         }
     }
 }
