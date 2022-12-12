@@ -52,7 +52,7 @@ class PokemonController {
 
     set3DEffect(e){
         let xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-        let yAxis = (window.innerHeight / 2 + e.pageY) / 25;
+        let yAxis = (window.innerHeight / 2  + e.pageY / 10) / 25;
         card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
     }
 }

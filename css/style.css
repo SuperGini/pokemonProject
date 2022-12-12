@@ -39,7 +39,7 @@ body {
 }
 
 .container {
-    max-width: 70rem;
+    max-width: 80rem;
     width: 100%;
     flex: 1;
     display: flex;
