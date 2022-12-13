@@ -9,6 +9,8 @@ const container = document.querySelector('.container');
 const card = document.querySelector('.card');
 const img = document.querySelector('.image img');
 
+const testLoader = document.querySelector('.test-loader');
+
 const pokemonService = new PokemonService();
 const renderPokemon = new RenderPokemonStats();
 
@@ -16,12 +18,21 @@ class PokemonController {
 
     async getPokemon(){
 
+        if(!testLoader.classList.contains('loader')){
+            testLoader.classList.add('loader');
+        }
+
 
         let pokemon = await pokemonService.getPokemon();
 
         img.src = pokemon.pokemonImg;
 
         img.onload = function (){
+
+           if(testLoader.classList.contains('loader')){
+               testLoader.classList.remove('loader');
+           }
+
             topStats.innerHTML = '';
             topStats.insertAdjacentHTML('afterbegin', renderPokemon.renderTopStats(pokemon));
 
