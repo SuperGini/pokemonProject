@@ -1,0 +1,6 @@
+
+@media (max-width: 37em){
+    .card{
+        transform: rotateY(0deg) rotateX(0deg) !important;
+    }
+}
