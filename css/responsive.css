@@ -1,6 +1,41 @@
 
-@media (max-width: 37em){
+@media (max-width: 90em){
     .card{
         transform: rotateY(0deg) rotateX(0deg) !important;
     }
+}
+
+@media (max-height: 53em) {
+    .ability{
+        margin-top: 3rem;
+    }
+
+    .util-one {
+        margin-top: 3rem;
+    }
+}
+
+@media (max-height: 50em) {
+    .random-btn{
+        margin-top: 3rem;
+    }
+}
+
+@media (max-height: 46em){
+    .ability{
+        margin-top: 1.6rem;
+    }
+
+    .util-one{
+        margin-top: 1.6rem;
+    }
+
+    .random-btn{
+        margin-top: 1.3rem;
+        margin-bottom: 7rem;
+    }
+
+    /*.card {*/
+    /*    white-space: nowrap;*/
+    /*}*/
 }
